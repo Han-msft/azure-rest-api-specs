@@ -1233,6 +1233,12 @@
                  "WUMU",
                  "WSUS"
             ]
+        },
+        {
+            "filename": "**/specification/ai/data-plane/Face/**/*.json",
+            "words": [
+                "headwear"
+            ]
         }
     ],
     "enableFiletypes": [
