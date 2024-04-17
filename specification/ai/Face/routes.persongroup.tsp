@@ -109,7 +109,7 @@ interface PersonGroupOperations {
 
   @doc("Retrieve a person's name and userData, and the persisted faceIds representing the registered person face feature(s).")
   @returnsDoc(GetPersonSuccess)
-  getPersonGroupPerson is Operations.ResourceRead<PersonGroupPerson>;
+  getPersonGroupPerson is FaceResourceReadOperation<PersonGroupPerson>;
 
   @doc("Update name or userData of a person.")
   @returnsDoc(SuccessfulCallWithEmptyBody)
@@ -145,7 +145,7 @@ interface PersonGroupOperations {
 
   @doc("Retrieve person face information. The persisted person face is specified by its personGroupId, personId and persistedFaceId.")
   @returnsDoc(GetPersonFaceSuccess)
-  getPersonGroupPersonFace is Operations.ResourceRead<PersonGroupPersonFace>;
+  getPersonGroupPersonFace is FaceResourceReadOperation<PersonGroupPersonFace>;
 
   @doc("Update a person persisted face's userData field.")
   @returnsDoc(SuccessfulCallWithEmptyBody)
@@ -235,7 +235,7 @@ interface PersonGroupOperations {
 
   @doc("Retrieve a person's name and userData, and the persisted faceIds representing the registered person face feature(s).")
   @returnsDoc(GetPersonSuccess)
-  getLargePersonGroupPerson is Operations.ResourceRead<LargePersonGroupPerson>;
+  getLargePersonGroupPerson is FaceResourceReadOperation<LargePersonGroupPerson>;
 
   @doc("Update name or userData of a person.")
   @returnsDoc(SuccessfulCallWithEmptyBody)
@@ -271,7 +271,7 @@ interface PersonGroupOperations {
 
   @doc("Retrieve person face information. The persisted person face is specified by its largePersonGroupId, personId and persistedFaceId.")
   @returnsDoc(GetPersonFaceSuccess)
-  getLargePersonGroupPersonFace is Operations.ResourceRead<LargePersonGroupPersonFace>;
+  getLargePersonGroupPersonFace is FaceResourceReadOperation<LargePersonGroupPersonFace>;
 
   @doc("Update a person persisted face's userData field.")
   @returnsDoc(SuccessfulCallWithEmptyBody)

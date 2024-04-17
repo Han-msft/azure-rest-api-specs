@@ -70,7 +70,7 @@ op DynamicPersonGroupLongRunningOperation<TParams extends TypeSpec.Reflection.Mo
 
 @doc("Get status of a long running operation.")
 @returnsDoc("A successful call returns the long running operation status.")
-op getFaceOperationStatus is Operations.ResourceRead<FaceOperationStatus>;
+op getFaceOperationStatus is FaceResourceReadOperation<FaceOperationStatus>;
 
 alias PersonModificationAccepted = "A successful call returns an empty response body. The service has accepted the request and will start processing soon. The client can query the operation status and result using the URL specified in the 'Operation-Location' response header. The URL expires in 48 hours.";
 alias DynamicPersonGroupModificationAccepted = "A successful call returns an empty response body. The service has accepted the request and will start processing soon. The client can query the operation status and result using the URL specified in the 'Operation-Location' response header. The URL expires in 48 hours. The URL provides the status of when PersonDirectory Person - List DynamicPersonGroup References will return the changes made in this request.";
@@ -100,7 +100,7 @@ interface PersonDirectoryOperations {
 
   @doc("Retrieve a person's name and userData from person directory.")
   @returnsDoc("A successful call returns the person's information.")
-  getPerson is Operations.ResourceRead<PersonDirectoryPerson>;
+  getPerson is FaceResourceReadOperation<PersonDirectoryPerson>;
 
   @doc("Update name or userData of a person.")
   @returnsDoc(SuccessfulCallWithEmptyBody)
@@ -165,7 +165,7 @@ interface PersonDirectoryOperations {
     Retrieve person face information. The persisted person face is specified by its personId. recognitionModel, and persistedFaceId.
     """)
   @returnsDoc("A successful call returns target persisted face's information (persistedFaceId and userData).")
-  getPersonFace is Operations.ResourceRead<PersonDirectoryFace>;
+  getPersonFace is FaceResourceReadOperation<PersonDirectoryFace>;
 
   @doc("Update a person persisted face's userData field.")
   @returnsDoc(SuccessfulCallWithEmptyBody)
@@ -210,7 +210,7 @@ interface PersonDirectoryOperations {
     """)
   @summary("Retrieve the information of a dynamic person group, including its name and userData.")
   @returnsDoc("A successful call returns the dynamic person group's information.")
-  getDynamicPersonGroup is Operations.ResourceRead<DynamicPersonGroup>;
+  getDynamicPersonGroup is FaceResourceReadOperation<DynamicPersonGroup>;
 
   #suppress "@azure-tools/typespec-azure-core/long-running-polling-operation-required" "Doesn't fit in generated long-running operation"
   @summary("Update an existing dynamic person group name, userData, add, or remove persons.")

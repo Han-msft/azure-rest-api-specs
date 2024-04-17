@@ -168,7 +168,7 @@ interface FaceListOperations {
 
   @doc("Retrieve persisted face in large face list by largeFaceListId and persistedFaceId.")
   @returnsDoc("A successful call returns target persisted face's information (persistedFaceId and userData).")
-  getLargeFaceListFace is Operations.ResourceRead<LargeFaceListFace>;
+  getLargeFaceListFace is FaceResourceReadOperation<LargeFaceListFace>;
 
   @doc("Update a specified face's userData field in a large face list by its persistedFaceId.")
   @returnsDoc(SuccessfulCallWithEmptyBody)

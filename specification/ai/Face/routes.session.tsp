@@ -76,7 +76,7 @@ interface LivenessSessionOperations {
   deleteLivenessSession is FaceResourceDeleteOperation<LivenessSession>;
 
   @doc("Get session result of detectLiveness/singleModal call.")
-  getLivenessSessionResult is Operations.ResourceRead<LivenessSession>;
+  getLivenessSessionResult is FaceResourceReadOperation<LivenessSession>;
 
   @doc(ListSessionDescription)
   @summary("Lists sessions for /detectLiveness/SingleModal.")
@@ -129,7 +129,7 @@ interface LivenessSessionOperations {
   deleteLivenessWithVerifySession is FaceResourceDeleteOperation<LivenessWithVerifySession>;
 
   @doc("Get session result of detectLivenessWithVerify/singleModal call.")
-  getLivenessWithVerifySessionResult is Operations.ResourceRead<LivenessWithVerifySession>;
+  getLivenessWithVerifySessionResult is FaceResourceReadOperation<LivenessWithVerifySession>;
 
   @summary("Lists sessions for /detectLivenessWithVerify/SingleModal.")
   @doc("""
