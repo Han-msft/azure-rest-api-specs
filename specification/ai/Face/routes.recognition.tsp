@@ -121,7 +121,7 @@ interface FaceRecognitionOperations {
     """
   )
   findSimilarFromFaceList is FindSimilarOperation<{
-    @doc("An existing user-specified unique candidate face list, created in \"Create Face List\". Face list contains a set of persistedFaceIds which are persisted and will never expire.")
+    @doc("An existing user-specified unique candidate Face List, created in \"Create Face List\". Face List contains a set of persistedFaceIds which are persisted and will never expire.")
     faceListId: string;
   }>;
 
@@ -133,7 +133,7 @@ interface FaceRecognitionOperations {
     """
   )
   findSimilarFromLargeFaceList is FindSimilarOperation<{
-    @doc("An existing user-specified unique candidate large face list, created in \"Create Large Face List\". Large face list contains a set of persistedFaceIds which are persisted and will never expire.")
+    @doc("An existing user-specified unique candidate Large Face List, created in \"Create Large Face List\". Large Face List contains a set of persistedFaceIds which are persisted and will never expire.")
     largeFaceListId: string;
   }>;
 
@@ -142,7 +142,7 @@ interface FaceRecognitionOperations {
     """
     For each face in the faceIds array, Face Identify will compute similarities between the query face and all the faces in the Person Group (given by personGroupId), and return candidate person(s) for that face ranked by similarity confidence. The Person Group should be trained to make it ready for identification. See more in \"Train Person Group\".
     ${IdentifyDocumentNote}
-    >   * Try \"Find Similar\" when you need to find similar faces from a face list/large face list instead of a Person Group.
+    >   * Try \"Find Similar\" when you need to find similar faces from a Face List/Large Face List instead of a Person Group.
     >   * The 'recognitionModel' associated with the query faces' faceIds should be the same as the 'recognitionModel' used by the target Person Group.
     """
   )
@@ -156,7 +156,7 @@ interface FaceRecognitionOperations {
     """
     For each face in the faceIds array, Face Identify will compute similarities between the query face and all the faces in the Large Person Group (given by largePersonGroupId), and return candidate person(s) for that face ranked by similarity confidence. The Large Person Group should be trained to make it ready for identification. See more in \"Train Large Person Group\".
     ${IdentifyDocumentNote}
-    >   * Try \"Find Similar\" when you need to find similar faces from a face list/large face list instead of a Person Group/Large Person Group.
+    >   * Try \"Find Similar\" when you need to find similar faces from a Face List/Large Face List instead of a Person Group/Large Person Group.
     >   * The 'recognitionModel' associated with the query faces' faceIds should be the same as the 'recognitionModel' used by the target Person Group or Large Person Group.
     """
   )
