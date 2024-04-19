@@ -92,6 +92,12 @@ model LivenessSessionCreationResult {
   authToken: string;
 }
 
+@doc("Response of liveness session with verify creation with verify image provided.")
+model LivenessSessionWithVerifyCreationResult is LivenessSessionCreationResult {
+  @doc("The detail of face for verification.")
+  verifyImage: LivenessWithVerifyImage;
+}
+
 @doc("The current status of the session.")
 union FaceSessionStatus {
   string,
