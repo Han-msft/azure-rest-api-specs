@@ -8662,7 +8662,7 @@
         },
         "authToken": {
           "type": "string",
-          "description": "Bearer token to provide authenication for the Vision SDK running on a client application. This Bearer token has limited permissions to perform only the required action and expires after the TTL time. It is also auditable."
+          "description": "Bearer token to provide authentication for the Vision SDK running on a client application. This Bearer token has limited permissions to perform only the required action and expires after the TTL time. It is also auditable."
         }
       },
       "required": [
@@ -8722,7 +8722,7 @@
         },
         "authToken": {
           "type": "string",
-          "description": "Bearer token to provide authenication for the Vision SDK running on a client application. This Bearer token has limited permissions to perform only the required action and expires after the TTL time. It is also auditable."
+          "description": "Bearer token to provide authentication for the Vision SDK running on a client application. This Bearer token has limited permissions to perform only the required action and expires after the TTL time. It is also auditable."
         },
         "verifyImage": {
           "$ref": "#/definitions/LivenessWithVerifyImage",
