@@ -45,7 +45,7 @@ interface PersonGroupOperations {
     > *
     >   * Free-tier subscription quota: 1,000 Person Groups. Each holds up to 1,000 persons.
     >   * S0-tier subscription quota: 1,000,000 Person Groups. Each holds up to 10,000 persons.
-    >   * to handle larger scale face identification problem, please consider using LargePersonGroup.
+    >   * to handle larger scale face identification problem, please consider using Large Person Group.
     """)
   @returnsDoc(SuccessfulCallWithEmptyBody)
   createPersonGroup is FaceCollectionResourceCreateOperation<PersonGroup>;
@@ -76,7 +76,7 @@ interface PersonGroupOperations {
     ReturnRecognitionModelOptions
   >;
 
-  @doc("To check Person Group training status completed or still ongoing. PersonGroup Training is an asynchronous operation triggered by \"Train Person Group\" API.")
+  @doc("To check Person Group training status completed or still ongoing. Person Group training is an asynchronous operation triggered by \"Train Person Group\" API.")
   @returnsDoc("A successful call returns the Person Group's training status.")
   getPersonGroupTrainingStatus is FaceResourceGetTrainingStatus<PersonGroup>;
 
@@ -203,7 +203,7 @@ interface PersonGroupOperations {
     ReturnRecognitionModelOptions
   >;
 
-  @summary("To check Large Person Group training status completed or still ongoing. LargePersonGroup Training is an asynchronous operation triggered by \"Train Large Person Group\" API.")
+  @summary("To check Large Person Group training status completed or still ongoing. Large Person Group training is an asynchronous operation triggered by \"Train Large Person Group\" API.")
   @doc("""
     Training time depends on the number of person entries, and their faces in a Large Person Group. It could be in seconds, or up to half an hour for 1,000,000 persons.
     """)

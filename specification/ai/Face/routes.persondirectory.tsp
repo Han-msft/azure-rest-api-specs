@@ -190,7 +190,7 @@ interface PersonDirectoryOperations {
   @doc("""
     A Dynamic Person Group is a container that references Person Directory \"Create Person\". After creation, use Person Directory \"Update Dynamic Person Group\" to add/remove persons to/from the Dynamic Person Group.
 
-    DynamicPersonGroup and UserData will be stored on server until Person Directory \"Delete Dynamic Person Group\" is called. Use \"Identify From Dynamic Person Group\" with the dynamicPersonGroupId parameter to identify against persons.
+    Dynamic Person Group and user data will be stored on server until Person Directory \"Delete Dynamic Person Group\" is called. Use \"Identify From Dynamic Person Group\" with the dynamicPersonGroupId parameter to identify against persons.
 
     No image will be stored. Only the person's extracted face feature(s) and userData will be stored on server until Person Directory \"Delete Person\" or \"Delete Person Face\" is called.
 

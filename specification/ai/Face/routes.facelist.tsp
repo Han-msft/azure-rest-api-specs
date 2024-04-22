@@ -41,9 +41,9 @@ interface FaceListOperations {
 
     After creation, user should use \"Add Face List Face\" to import the faces. No image will be stored. Only the extracted face feature(s) will be stored on server until \"Delete Face List\" is called.
 
-    \"Find Similar\" is used for scenario like finding celebrity-like faces, similar face filtering, or as a light way face identification. But if the actual use is to identify person, please use PersonGroup / LargePersonGroup and \"Identify\".
+    \"Find Similar\" is used for scenario like finding celebrity-like faces, similar face filtering, or as a light way face identification. But if the actual use is to identify person, please use Person Group / Large Person Group and \"Identify\".
 
-    Please consider LargeFaceList when the face number is large. It can support up to 1,000,000 faces.
+    Please consider Large Face List when the face number is large. It can support up to 1,000,000 faces.
     """)
   @returnsDoc(SuccessfulCallWithEmptyBody)
   createFaceList is FaceCollectionResourceCreateOperation<FaceList>;
@@ -63,9 +63,9 @@ interface FaceListOperations {
   @doc("""
     List Face Lists' faceListId, name, userData and recognitionModel.
 
-    To get face information inside faceList use Get Face List.
+    To get face information inside Face List use \"Get Face List\".
     """)
-  @returnsDoc("A successful call returns an array of faceList.")
+  @returnsDoc("A successful call returns an array of Face Lists.")
   getFaceLists is Foundations.ResourceList<
     FaceList,
     ReturnRecognitionModelOptions,
@@ -96,7 +96,7 @@ interface FaceListOperations {
 
     After creation, user should use Add Large Face List Face to import the faces and Train Large Face List to make it ready for \"Find Similar\". No image will be stored. Only the extracted face feature(s) will be stored on server until Delete Large Face List is called.
 
-    \"Find Similar\" is used for scenario like finding celebrity-like faces, similar face filtering, or as a light way face identification. But if the actual use is to identify person, please use Person Group / Large Person Group and Identify.
+    \"Find Similar\" is used for scenario like finding celebrity-like faces, similar face filtering, or as a light way face identification. But if the actual use is to identify person, please use Person Group / Large Person Group and \"Identify\".
 
     > [!NOTE]
     >
@@ -137,7 +137,7 @@ interface FaceListOperations {
   >;
 
   @doc("""
-    To check the Large Face List training status completed or still ongoing. LargeFaceList Training is an asynchronous operation triggered by Train Large Face List.
+    To check the Large Face List training status completed or still ongoing. Large Face List training is an asynchronous operation triggered by \"Train Large Face List\".
 
     Training time depends on the number of face entries in a Large Face List. It could be in seconds, or up to half an hour for 1,000,000 faces.
     """)
@@ -149,7 +149,7 @@ interface FaceListOperations {
 
     Training is a crucial step that only a trained Large Face List can be used by \"Find Similar From Large Face List\".
 
-    The training task is an asynchronous task. Training time depends on the number of face entries in a Large Face List. It could be in seconds, or up to half an hour for 1,000,000 faces. To check training completion, please use Get Large Face List Training Status.
+    The training task is an asynchronous task. Training time depends on the number of face entries in a Large Face List. It could be in seconds, or up to half an hour for 1,000,000 faces. To check training completion, please use \"Get Large Face List Training Status\".
     """)
   @returnsDoc(SuccessfulCallWithEmptyBody)
   @pollingOperation(FaceListOperations.getLargeFaceListTrainingStatus)
