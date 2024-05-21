@@ -67,6 +67,87 @@ interface FaceClient {
 }
 
 @client({
+  name: "FaceServiceClient",
+  service: Face,
+})
+namespace FaceServiceClient {
+  @operationGroup
+  interface FaceLists {
+    create is FaceListOperations.createFaceList;
+    delete is FaceListOperations.deleteFaceList;
+    get is FaceListOperations.getFaceList;
+    update is FaceListOperations.updateFaceList;
+    getFaceLists is FaceListOperations.getFaceLists;
+    addFaceFromUrl is FaceListOperations.addFaceListFaceFromUrl;
+    #suppress "@azure-tools/typespec-azure-core/byos" "It's an RPC call to detect face from an image, it doesn't store anything. There's a BYOS version of this call, but it's not this one."
+    addFace is FaceListOperations.addFaceListFace;
+    deleteFace is FaceListOperations.deleteFaceListFace;
+  }
+
+  @operationGroup
+  interface LargeFaceLists {
+    create is FaceListOperations.createLargeFaceList;
+    delete is FaceListOperations.deleteLargeFaceList;
+    get is FaceListOperations.getLargeFaceList;
+    update is FaceListOperations.updateLargeFaceList;
+    getLargeFaceLists is FaceListOperations.getLargeFaceLists;
+    getTrainingStatus is FaceListOperations.getLargeFaceListTrainingStatus;
+    train is FaceListOperations.trainLargeFaceList;
+    addFaceFromUrl is FaceListOperations.addLargeFaceListFaceFromUrl;
+    #suppress "@azure-tools/typespec-azure-core/byos" "It's an RPC call to detect face from an image, it doesn't store anything. There's a BYOS version of this call, but it's not this one."
+    addFace is FaceListOperations.addLargeFaceListFace;
+    deleteFace is FaceListOperations.deleteLargeFaceListFace;
+    getFace is FaceListOperations.getLargeFaceListFace;
+    updateFace is FaceListOperations.updateLargeFaceListFace;
+    getFaces is FaceListOperations.getLargeFaceListFaces;
+  }
+
+  @operationGroup
+  interface PersonGroups {
+    create is PersonGroupOperations.createPersonGroup;
+    delete is PersonGroupOperations.deletePersonGroup;
+    get is PersonGroupOperations.getPersonGroup;
+    update is PersonGroupOperations.updatePersonGroup;
+    getPersonGroups is PersonGroupOperations.getPersonGroups;
+    getTrainingStatus is PersonGroupOperations.getPersonGroupTrainingStatus;
+    train is PersonGroupOperations.trainPersonGroup;
+    createPerson is PersonGroupOperations.createPersonGroupPerson;
+    deletePerson is PersonGroupOperations.deletePersonGroupPerson;
+    getPerson is PersonGroupOperations.getPersonGroupPerson;
+    updatePerson is PersonGroupOperations.updatePersonGroupPerson;
+    getPersons is PersonGroupOperations.getPersonGroupPersons;
+    addFaceFromUrl is PersonGroupOperations.addPersonGroupPersonFaceFromUrl;
+    #suppress "@azure-tools/typespec-azure-core/byos" "It's an RPC call to detect face from an image, it doesn't store anything. There's a BYOS version of this call, but it's not this one."
+    addFace is PersonGroupOperations.addPersonGroupPersonFace;
+    deleteFace is PersonGroupOperations.deletePersonGroupPersonFace;
+    getFace is PersonGroupOperations.getPersonGroupPersonFace;
+    updateFace is PersonGroupOperations.updatePersonGroupPersonFace;
+  }
+
+  @operationGroup
+  interface LargePersonGroups {
+    create is PersonGroupOperations.createLargePersonGroup;
+    delete is PersonGroupOperations.deleteLargePersonGroup;
+    get is PersonGroupOperations.getLargePersonGroup;
+    update is PersonGroupOperations.updateLargePersonGroup;
+    getLargePersonGroups is PersonGroupOperations.getLargePersonGroups;
+    getTrainingStatus is PersonGroupOperations.getLargePersonGroupTrainingStatus;
+    train is PersonGroupOperations.trainLargePersonGroup;
+    createPerson is PersonGroupOperations.createLargePersonGroupPerson;
+    deletePerson is PersonGroupOperations.deleteLargePersonGroupPerson;
+    getPerson is PersonGroupOperations.getLargePersonGroupPerson;
+    updatePerson is PersonGroupOperations.updateLargePersonGroupPerson;
+    getPersons is PersonGroupOperations.getLargePersonGroupPersons;
+    addFaceFromUrl is PersonGroupOperations.addLargePersonGroupPersonFaceFromUrl;
+    #suppress "@azure-tools/typespec-azure-core/byos" "It's an RPC call to detect face from an image, it doesn't store anything. There's a BYOS version of this call, but it's not this one."
+    addFace is PersonGroupOperations.addLargePersonGroupPersonFace;
+    deleteFace is PersonGroupOperations.deleteLargePersonGroupPersonFace;
+    getFace is PersonGroupOperations.getLargePersonGroupPersonFace;
+    updateFace is PersonGroupOperations.updateLargePersonGroupPersonFace;
+  }
+}
+
+@client({
   name: "FaceSessionClient",
   service: Face,
 })
