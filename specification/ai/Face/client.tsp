@@ -71,8 +71,15 @@ interface FaceClient {
   service: Face,
 })
 namespace FaceServiceClient {
-  @operationGroup
-  interface FaceLists {
+  @operationGroup("java")
+  @operationGroup("python")
+  @client(
+    {
+      name: "FaceListClient",
+    },
+    "csharp"
+  )
+  interface FaceList {
     create is FaceListOperations.createFaceList;
     delete is FaceListOperations.deleteFaceList;
     get is FaceListOperations.getFaceList;
@@ -84,8 +91,15 @@ namespace FaceServiceClient {
     deleteFace is FaceListOperations.deleteFaceListFace;
   }
 
-  @operationGroup
-  interface LargeFaceLists {
+  @operationGroup("java")
+  @operationGroup("python")
+  @client(
+    {
+      name: "LargeFaceListClient",
+    },
+    "csharp"
+  )
+  interface LargeFaceList {
     create is FaceListOperations.createLargeFaceList;
     delete is FaceListOperations.deleteLargeFaceList;
     get is FaceListOperations.getLargeFaceList;
@@ -102,8 +116,15 @@ namespace FaceServiceClient {
     getFaces is FaceListOperations.getLargeFaceListFaces;
   }
 
-  @operationGroup
-  interface PersonGroups {
+  @operationGroup("java")
+  @operationGroup("python")
+  @client(
+    {
+      name: "PersonGroupClient",
+    },
+    "csharp"
+  )
+  interface PersonGroup {
     create is PersonGroupOperations.createPersonGroup;
     delete is PersonGroupOperations.deletePersonGroup;
     get is PersonGroupOperations.getPersonGroup;
@@ -124,8 +145,15 @@ namespace FaceServiceClient {
     updateFace is PersonGroupOperations.updatePersonGroupPersonFace;
   }
 
-  @operationGroup
-  interface LargePersonGroups {
+  @operationGroup("java")
+  @operationGroup("python")
+  @client(
+    {
+      name: "LargePersonGroupClient",
+    },
+    "csharp"
+  )
+  interface LargePersonGroup {
     create is PersonGroupOperations.createLargePersonGroup;
     delete is PersonGroupOperations.deleteLargePersonGroup;
     get is PersonGroupOperations.getLargePersonGroup;
