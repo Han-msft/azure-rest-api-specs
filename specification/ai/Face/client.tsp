@@ -65,6 +65,13 @@ interface FaceClient {
   findSimilar is FaceRecognitionOperations.findSimilar;
   verifyFaceToFace is FaceRecognitionOperations.verifyFaceToFace;
   group is FaceRecognitionOperations.group;
+
+  findSimilarFromFaceList is FaceRecognitionOperations.findSimilarFromFaceList;
+  findSimilarFromLargeFaceList is FaceRecognitionOperations.findSimilarFromLargeFaceList;
+  identifyFromPersonGroup is FaceRecognitionOperations.identifyFromPersonGroup;
+  identifyFromLargePersonGroup is FaceRecognitionOperations.identifyFromLargePersonGroup;
+  verifyFromPersonGroup is FaceRecognitionOperations.verifyFromPersonGroup;
+  verifyFromLargePersonGroup is FaceRecognitionOperations.verifyFromLargePersonGroup;
 }
 
 @client({
