@@ -77,11 +77,7 @@ interface FaceClient {
 @client({
   name: "FaceServiceClient",
   service: Face,
-}, "csharp,python")
-@client({
-  name: "administration.FaceServiceClient",
-  service: Face,
-}, "java")
+})
 namespace FaceServiceClient {
   @operationGroup
   @clientName("FaceListClientImpl", "csharp")
